@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { resolve } = require('path');
 const sqlite3 = require('sqlite3');
 
 sqlite3.verbose();

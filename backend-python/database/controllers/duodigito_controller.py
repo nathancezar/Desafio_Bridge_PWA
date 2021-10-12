@@ -15,9 +15,9 @@ class DuodigitoController():
         try:
             duodigit_instance = Duodigit(number)
             result = duodigit_instance.check_duodigit()
-            # old_duodigit = duodigito_model.getByNumber(number)
-            # if not old_duodigit:
-            #     self.insertNewDuodigit(number, result['duodigit'])
+            old_duodigit = duodigito_model.getByNumber(number)
+            if not old_duodigit:
+                self.insertNewDuodigit(number, result['duodigit'])
             return result
         except Exception as ex:
             raise ex
