@@ -55,9 +55,12 @@ A aplicação ficará acessível em http://localhost:8080/
 # Uso
 
 O usuário deve inserir um número real maior que 100 e clicar em "Calcular menor duodigito".
+
 O resultado e o tempo de execução aparecerão em um log abaixo do botão.
+
 A aplicação salva cada novo valor no banco de dados. Para visualizar os valores salvos é necessário
 acessar o banco de dados "backend-python/database/duodigito.db" com uma IDE. (exemplo DBeaver).
+
 Como não foi passado limite de tempo ou de tentativas, não foi implementada nenhuma exceção para
 parar o algoritmo, o que pode causar um loop infinito.
 
@@ -68,6 +71,7 @@ Para isso deve-se acessar:
 $ cd backend-python/engine/
 ```
 E executar o script "calculate_duodigito.py", passando um número como argumento.
+
 Exemplo:
 
 ```sh
