@@ -1,6 +1,7 @@
 import tornado.web
 from database import connection
 
+
 class BaseHandler(tornado.web.RequestHandler):
     """
         Aggregates code that is common to all custom handlers.

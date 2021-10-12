@@ -52,13 +52,13 @@
               Calcular menor duodigito
               </b-button>
 
-              <div v-if="duodigito" class="form-group text-left mt-3">
+              <div v-if="result" class="form-group text-left mt-3">
                 <b-form-textarea 
                   id=resultText
-                  v-model="duodigito"
+                  v-model="result"
                   no-resize
                   readonly
-                  :value="duodigito">
+                  :value="result">
 
                 </b-form-textarea>
               </div>
@@ -73,7 +73,7 @@
 
 <script>
 import { BNavbar } from 'bootstrap-vue'
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
   name: 'home',
@@ -85,7 +85,7 @@ export default {
       inputNumber: '',
       loaded: true,
       getResult: false,
-      duodigito: '',
+      result: '',
     }
   },
   methods: {
@@ -98,13 +98,19 @@ export default {
     sendNumber() {
       this.loaded = false;
       console.log(this.inputNumber);
-      this.duodigito = this.duodigito + 888 + '\n';
-      // axios.get(this.backend + '/calculate').then((res) => {
-      //   if(res.data) {
-      //     console.log(res.data);
-      //   }
-      //   this.loaded = true;
-      // }).catch(err => console.log(err));
+      axios.post(this.backend + '/calculate', {
+        'number': this.inputNumber,
+      }).then((res) => {
+        if(res.data) {
+          console.log(res.data);
+          this.result = this.result +
+                        res.data.duodigit +
+                        ' Tempo de execução: ' +
+                        res.data.time +
+                        '\n';
+        }
+        this.loaded = true;
+      }).catch(err => console.log(err));
       this.loaded = true; // retirar depois de implementar o backend
     }
   }

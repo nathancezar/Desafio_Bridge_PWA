@@ -1,0 +1,15 @@
+{
+  "name": "app-database",
+  "version": "1.0.0",
+  "description": "Banco de dados para o teste de Desenvolvimento do Lab. Bridge",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "node main.js"
+  },
+  "author": "Nathan C Cardoso",
+  "license": "MIT",
+  "dependencies": {
+    "sqlite3": "^5.0.2"
+  }
+}

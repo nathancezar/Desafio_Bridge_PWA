@@ -1,6 +1,9 @@
 import tornado.ioloop
 import tornado.web
 
+from duodigito_handler import DuodigitoHandler
+
+
 def make_app():
     return tornado.web.Application([
         (r"/calculate", DuodigitoHandler),

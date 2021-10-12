@@ -1,10 +1,12 @@
 import json
 import traceback
+
 from base_handler import BaseHandler
 from database.controllers.duodigito_controller import DuodigitoController
 
+
 class DuodigitoHandler(BaseHandler):
-    def get(self):
+    def post(self):
         try:
             request = json.loads(self.request.body)
             duodigitoController = DuodigitoController()
