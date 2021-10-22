@@ -38,7 +38,7 @@ class Duodigit:
                         dif_char = multiple[i]
                         # a variável vai ser atualizada no caso de um terceiro digito diferente,
                         # mas isso não gera erro pois 'diferent_chars' será implementado
-                        # inpedindo mais de
+                        # impedindo mais de um caracter diferente.
 
                 # Caso a quantidade de digitos diferentes seja menor que 3, finaliza a busca
                 if diferent_chars < 3:
